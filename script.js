@@ -25,7 +25,6 @@ function showQuestions() {
     for(var i=0; i<questions.length; i++) {
         // show question
         questionDiv.innerHTML = questions[i];
-        console.log(i)
         //show answer choices
         showAnswerChoices(i);
     }
@@ -34,7 +33,7 @@ function showQuestions() {
 function showAnswerChoices(questionIndex) {
     const ul = document.getElementById("answer-choice-container");
     for(var j=0; j<answerChoices[questionIndex].length; j++) {
-        console.log(j)
+        // this approach didn't work as the question element innterHTML is replaced but the li keep being added
         var li = document.createElement("li");
         li.innerHTML = answerChoices[questionIndex][j];
         ul.appendChild(li);
