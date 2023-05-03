@@ -5,7 +5,7 @@ var questions = [
     "What is the correct way to generate a random integer in the interval [a,b)?",
     "Which of these functions will not return the value of a+b?",
 ]
-var answersChoices = [
+var answerChoices = [
     ["window.print()", "console.print()", "window.log()", "console.log()"],
     ["// comment", "<!--comment-->", "/*comment*/", "# comment"],
     ["alert", "confirm", "prompt", "print"],
@@ -14,3 +14,29 @@ var answersChoices = [
 ]
 
 var correctAnswers = [3, 0, 3, 1, 2];
+
+const mainContainer = document.getElementById("main-container");
+
+function showQuestions() {
+    // hide start elements
+    document.querySelector("#start-screen").style.display = "none";
+    const questionDiv = document.querySelector("#question");
+
+    for(var i=0; i<questions.length; i++) {
+        // show question
+        questionDiv.innerHTML = questions[i];
+        console.log(i)
+        //show answer choices
+        showAnswerChoices(i);
+    }
+}
+
+function showAnswerChoices(questionIndex) {
+    const ul = document.getElementById("answer-choice-container");
+    for(var j=0; j<answerChoices[questionIndex].length; j++) {
+        console.log(j)
+        var li = document.createElement("li");
+        li.innerHTML = answerChoices[questionIndex][j];
+        ul.appendChild(li);
+    }
+}
