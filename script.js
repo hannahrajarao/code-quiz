@@ -35,7 +35,17 @@ function showAnswerChoices(questionIndex) {
     for(var j=0; j<answerChoices[questionIndex].length; j++) {
         // this approach didn't work as the question element innterHTML is replaced but the li keep being added
         var li = document.createElement("li");
-        li.innerHTML = answerChoices[questionIndex][j];
+        li.classList.add("answer-choice");
+        li.id = `answer-choice-${j}`;
+        li.addEventListener("click", (event) => {checkAnswer(event.target.id)});
+        liEls.push(li);
+    }
+}
+
+function showAnswerChoices() {
+    for(var i=0; i<answerChoices[currentQuestion].length; i++) {
+        var li = liEls[i]
+        li.textContent = answerChoices[currentQuestion][i];
         ul.appendChild(li);
     }
 }
