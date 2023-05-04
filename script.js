@@ -57,6 +57,8 @@ function checkAnswer(id) {
     }
     else {
         correct.textContent = "Wrong";
+        currentTime -= 10;
+
     }
     if(currentQuestion === questions.length-1) {
         endGame();
