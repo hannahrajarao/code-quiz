@@ -7,6 +7,18 @@
     <body>
         <header>
         <h1>Code Quiz</h1>
-        <p>How well do you know JavaScript?</p>
+            <div id="timer-message">Time Remaining: <span id="timer-number"></span> seconds</div>
+        </header>
+        <div class="main-container" id="start-screen">
+            <p>How well do you know JavaScript? Take this quiz and find out</p>
+            <button onclick="startGame()">Start</button>
+        </div>
+        <div class="main-container" id="quiz-container">
+            <div id="question"></div>
+            <ul id="answer-choice-container"></ul>
+            <div id="correct"></div>
+        </div>
+        <div class="main-container" id="score-screen"></div>
+        <script src="script.js"></script>
     </body>
 </html>
