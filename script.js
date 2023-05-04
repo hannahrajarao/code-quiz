@@ -20,6 +20,27 @@ const mainContainer = document.getElementById("main-container");
 function showQuestions() {
     // hide start elements
     document.querySelector("#start-screen").style.display = "none";
+    timerMessage.style.display = "inline";
+    createAnswerSlots();
+    startTimer();
+    showQuestions();
+}
+
+function startTimer() {
+    console.log("startTimer called")
+    timerNumber.innerHTML = maxTime;
+    var timerInterval = setInterval(function() {
+        console.log(currentTime);
+        currentTime--;
+        timerNumber.innerHTML = currentTime;
+        if(currentTime < 0) {
+            clearInterval(timerInterval);
+            endGame();
+        }
+    }, 1000);
+}
+
+function showQuestions() {
     const questionDiv = document.querySelector("#question");
 
     for(var i=0; i<questions.length; i++) {
