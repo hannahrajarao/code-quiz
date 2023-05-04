@@ -7,10 +7,10 @@ var questions = [
 ]
 var answerChoices = [
     ["window.print()", "console.print()", "window.log()", "console.log()"],
-    ["// comment", "<!--comment-->", "/*comment*/", "# comment"],
-    ["alert", "confirm", "prompt", "print"],
+    ["// comment", "<!-- comment -->", "/* comment */", "# comment"],
+    ["alert()", "confirm()", "prompt()", "print()"],
     ["Math.floor(Math.random()*b+a)", "Math.floor(Math.random()*(b-a)+a)", "Math.floor(Math.random()*a+b)", "Math.floor(Math.random()*(a-b)+a)"],
-    ["var add = (a, b)=> a+b;", "function add(a, b) {return a+b}", "function(a, b) {a+b}","var add = function(a, b) {return a+b}"]
+    ["var add = (a, b) => a+b;", "function add(a, b) {return a+b}", "function(a, b) {a+b}","var add = function(a, b) {return a+b}"]
 ]
 
 var correctAnswers = [3, 0, 3, 1, 2];
