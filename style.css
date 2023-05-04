@@ -1,0 +1,18 @@
+body {
+    margin: 10px 15%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+ul {
+    list-style: none;
+}
+.answer-choice {
+    font-family: monospace;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: powderblue;
+    border-radius: 10px;
+}
+
+.answer-choice:hover {
+    background-color: darkcyan;
+}
