@@ -15,7 +15,9 @@ var answerChoices = [
 
 var correctAnswers = [3, 0, 3, 1, 2];
 
-const mainContainer = document.getElementById("main-container");
+var currentQuestion = 0;
+const maxTime = 75;
+var currentTime = maxTime
 
 function showQuestions() {
     // hide start elements
