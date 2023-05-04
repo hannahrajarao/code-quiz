@@ -16,3 +16,14 @@ ul {
 .answer-choice:hover {
     background-color: darkcyan;
 }
+
+@media screen and (max-width: 500px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #timer-message {
+        margin-bottom: 15px;
+    }
+}
