@@ -39,3 +39,30 @@ function showAnswerChoices(questionIndex) {
         ul.appendChild(li);
     }
 }
+
+function checkAnswer(id) {
+    var idNum = id[id.length-1];
+    if(idNum == correctAnswers[currentQuestion]) {
+        correct.textContent = "Correct!";
+    }
+    else {
+        correct.textContent = "Wrong";
+    }
+    if(currentQuestion === questions.length-1) {
+        endGame();
+    }
+    else {
+        currentQuestion++;
+        showQuestions();
+    }
+}
+
+function endGame() {
+    quizContainer.style.display = "none";
+    showScoreScreen();
+}
+
+function showScoreScreen() {
+    scoreScreen = document.getElementById("score-screen");
+    scoreScreen.innerHTML = "Game Over! Enter your score below";
+}
