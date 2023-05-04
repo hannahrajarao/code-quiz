@@ -19,7 +19,14 @@ var currentQuestion = 0;
 const maxTime = 75;
 var currentTime = maxTime
 
-function showQuestions() {
+const quizContainer = document.getElementById("quiz-container");
+const timerMessage = document.getElementById("timer-message");
+const timerNumber = document.getElementById("timer-number");
+const correct = document.getElementById("correct");
+
+timerMessage.style.display = "none";
+
+function startGame() {
     // hide start elements
     document.querySelector("#start-screen").style.display = "none";
     timerMessage.style.display = "inline";
