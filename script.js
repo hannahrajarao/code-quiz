@@ -15,9 +15,12 @@ var answerChoices = [
 
 var correctAnswers = [3, 0, 3, 1, 2];
 
+var highScores;
+getScores();
+
 var currentQuestion = 0;
 const maxTime = 75;
-var currentTime = maxTime
+var currentTime = maxTime;
 
 const quizContainer = document.getElementById("quiz-container");
 const timerMessage = document.getElementById("timer-message");
@@ -112,6 +115,49 @@ function endGame() {
 }
 
 function showScoreScreen() {
-    scoreScreen = document.getElementById("score-screen");
-    scoreScreen.innerHTML = "Game Over! Enter your score below";
+    scoreScreen.style.visibility = "visible";
+    scoreSpan.textContent = currentTime;
+}
+
+function enterScore() {
+    const initials = initialEntry.value;
+    highScores[initials] = currentTime;
+    setScores();
+    window.location.href = "highscores.html";
+}
+
+function setScores() {
+    localStorage.setItem("highscores", JSON.stringify(highScores));
+}
+
+function getScores() {
+    scores = localStorage.getItem("highscores");
+    if(scores !== null)
+        highScores = JSON.parse(scores);
+    else
+        highScores = {};
+}
+
+function showHighScores() {
+    getScores();
+    // console.log("high score function", highScores);
+    sortScores();
+    scoreList.innerHTML = "";
+    for(var [key, value] of Object.entries(highScores)) {
+        // console.log(key, value);
+        const li = document.createElement("li");
+        li.classList.add("score-list-item");
+        li.textContent = key+' - '+value;
+        scoreList.appendChild(li);
+    }
+}
+
+function sortScores() {
+    highScores = Object.fromEntries(Object.entries(highScores).sort((a,b) => b[1]-a[1]));
+}
+
+function resetScores() {
+    highScores = {};
+    setScores();
+    showHighScores();
 }
