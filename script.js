@@ -101,6 +101,7 @@ function checkAnswer(id) {
 
 function endGame() {
     quizContainer.style.display = "none";
+    clearInterval(timerInterval);
     showScoreScreen();
 }
 
