@@ -30,7 +30,11 @@ const scoreList = document.getElementById("score-list");
 
 try {
     // hide error when opening score screen as they do not have these elements
-timerMessage.style.display = "none";
+    timerMessage.style.display = "none";
+    scoreScreen.style.visibility = "hidden";
+}
+catch {}
+
 
 function startGame() {
     // hide start elements
