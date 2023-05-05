@@ -6,7 +6,7 @@
     </head>
     <body>
         <header>
-        <h1>Code Quiz</h1>
+            <h1>Code Quiz</h1>
             <div id="timer-message">Time Remaining: <span id="timer-number"></span> seconds</div>
         </header>
         <div class="main-container" id="start-screen">
@@ -18,7 +18,13 @@
             <ul id="answer-choice-container"></ul>
             <div id="correct"></div>
         </div>
-        <div class="main-container" id="score-screen"></div>
+        <div class="main-container" id="score-screen">
+            <p>Game Over! Your score is <span id="score"></span></p>
+            <p>Enter your initials below: </p>
+            <input type="text" name="initials" id="initial-entry">
+            <button onclick="enterScore()">Submit</button>
+        </div>
+        <a href="highscores.html" class = "change-page" id="highscore-link">View high scores</a>
         <script src="script.js"></script>
     </body>
 </html>
