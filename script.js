@@ -38,14 +38,12 @@ function startGame() {
 function startTimer() {
     console.log("startTimer called")
     timerNumber.innerHTML = maxTime;
-    var timerInterval = setInterval(function() {
-        console.log(currentTime);
-        currentTime--;
-        timerNumber.innerHTML = currentTime;
+    timerInterval = setInterval(function() {
         if(currentTime < 0) {
-            clearInterval(timerInterval);
             endGame();
         }
+        currentTime--;
+        timerNumber.innerHTML = currentTime;
     }, 1000);
 }
 
