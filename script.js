@@ -59,10 +59,11 @@ function showQuestions() {
     showAnswerChoices();
 }
 
-function showAnswerChoices(questionIndex) {
-    const ul = document.getElementById("answer-choice-container");
-    for(var j=0; j<answerChoices[questionIndex].length; j++) {
-        // this approach didn't work as the question element innterHTML is replaced but the li keep being added
+const ul = document.getElementById("answer-choice-container");
+var liEls = [];
+
+function createAnswerSlots() {
+    for(var j=0; j<answerChoices[0].length; j++) {
         var li = document.createElement("li");
         li.classList.add("answer-choice");
         li.id = `answer-choice-${j}`;
