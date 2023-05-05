@@ -23,6 +23,10 @@ const quizContainer = document.getElementById("quiz-container");
 const timerMessage = document.getElementById("timer-message");
 const timerNumber = document.getElementById("timer-number");
 const correct = document.getElementById("correct");
+const scoreScreen = document.getElementById("score-screen");
+const scoreSpan = document.getElementById("score");
+const initialEntry = document.getElementById("initial-entry");
+const scoreList = document.getElementById("score-list");
 
 timerMessage.style.display = "none";
 
