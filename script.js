@@ -28,6 +28,8 @@ const scoreSpan = document.getElementById("score");
 const initialEntry = document.getElementById("initial-entry");
 const scoreList = document.getElementById("score-list");
 
+try {
+    // hide error when opening score screen as they do not have these elements
 timerMessage.style.display = "none";
 
 function startGame() {
