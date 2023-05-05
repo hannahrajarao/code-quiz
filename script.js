@@ -53,13 +53,10 @@ function startTimer() {
 
 function showQuestions() {
     const questionDiv = document.querySelector("#question");
-
-    for(var i=0; i<questions.length; i++) {
-        // show question
-        questionDiv.innerHTML = questions[i];
-        //show answer choices
-        showAnswerChoices(i);
-    }
+    // show question
+    questionDiv.innerHTML = questions[currentQuestion];
+    //show answer choices
+    showAnswerChoices();
 }
 
 function showAnswerChoices(questionIndex) {
