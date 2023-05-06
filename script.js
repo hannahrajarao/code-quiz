@@ -52,11 +52,13 @@ function startTimer() {
     console.log("startTimer called")
     timerNumber.innerHTML = maxTime;
     timerInterval = setInterval(function() {
-        if(currentTime < 0) {
+        if(currentTime <= 0) {
             endGame();
         }
-        currentTime--;
-        timerNumber.innerHTML = currentTime;
+        else {
+            currentTime--;
+            timerNumber.innerHTML = currentTime;
+        }
     }, 1000);
 }
 
