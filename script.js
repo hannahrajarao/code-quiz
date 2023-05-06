@@ -98,7 +98,12 @@ function checkAnswer(id) {
     }
     else {
         correct.textContent = "Wrong";
-        currentTime -= 10;
+        if(currentTime < 10) {
+            currentTime = 0;
+            endGame();
+        } else {
+            currentTime -= 10;
+        }
         timerNumber.innerHTML = currentTime;
     }
     if(currentQuestion === questions.length-1) {
