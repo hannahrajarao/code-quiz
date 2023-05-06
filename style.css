@@ -20,7 +20,18 @@ ul {
 }
 
 button {
+    background-color: powderblue;
+    border: 2px solid black;
+    border-radius: 2px;
+    padding: 5px;
+}
 
+button:hover {
+    background-color: darkcyan;
+}
+
+input {
+    padding: 5px;
 }
 
 .answer-choice {
