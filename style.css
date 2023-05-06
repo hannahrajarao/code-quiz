@@ -1,6 +1,9 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
     margin: 10px 20%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 header {
     display: flex;
