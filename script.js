@@ -156,6 +156,11 @@ function sortScores() {
     highScores = Object.fromEntries(Object.entries(highScores).sort((a,b) => b[1]-a[1]));
 }
 
+function confirmResetScores() {
+    if(confirm("Are you sure you want to reset all scores?"))
+        resetScores();
+}
+
 function resetScores() {
     highScores = {};
     setScores();
