@@ -128,9 +128,12 @@ function showScoreScreen() {
 
 function enterScore() {
     const initials = initialEntry.value;
-    highScores[initials] = currentTime;
-    setScores();
-    window.location.href = "highscores.html";
+    if(initials !== "") {
+        highScores[initials] = currentTime;
+        setScores();
+        window.location.href = "highscores.html";
+    }
+    
 }
 
 function setScores() {
